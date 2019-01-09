@@ -242,8 +242,15 @@ namespace WindowsFormsApp1
             {
                 //ファイル名をstring型tempに代入し、
                 string temp = playerFileName[i];
-                //pictureBoxに表示させる
-                playerCards[i].ImageLocation = $@"..\..\Resources\CardPicture\{temp}.png";
+                try
+                {
+                    //pictureBoxに表示させる
+                    playerCards[i].ImageLocation = $@"..\..\Resources\CardPicture\{temp}.png";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"エラーは、{ex.Message}です");
+                }
             }
         }
 
