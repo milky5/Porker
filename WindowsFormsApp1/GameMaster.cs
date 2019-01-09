@@ -10,21 +10,21 @@ namespace WindowsFormsApp1
     {
         #region クラス内で使用する変数の定義
         //マーク4種が入る配列を宣言
-        static string[] marks = new string[] { "Spade", "Diamond", "Heart", "Clover" };
+        public string[] marks = new string[] { "Spade", "Diamond", "Heart", "Clover" };
         //Card型インスタンスが入るListを宣言
-        static List<Card> cards = new List<Card>(52);
+        public List<Card> cards = new List<Card>(52);
         //シャッフル後のCardを保持するリストを宣言
-        static List<Card> shuffledCards = new List<Card>(52);
+        public List<Card> shuffledCards = new List<Card>(52);
         //シャッフル後のCardをどこまで配ったかを保持する変数を宣言
-        static int nowIndex = 0;
+        public int nowIndex = 0;
         //プレイヤーに配られたCardを保持するリストを宣言
-        static List<Card> playerCards = new List<Card>();
+        public List<Card> playerCards = new List<Card>();
         //コンピュータに配られたCardを保持するリストを宣言
-        static List<Card> cpuCards = new List<Card>();
+        public List<Card> cpuCards = new List<Card>();
         #endregion
 
         //シャッフル済カードを作るメソッド
-        private static void ShuffleCards()
+        public void ShuffleCards()
         {
             for (int i = 0; i < marks.Length; i++)
             {
@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
         }
 
         //シャッフル済カードをプレイヤーとコンピュータに配るメソッド
-        public static (List<string>, List<string>) DealCards()
+        public (List<string>, List<string>) DealCards()
         {
             ShuffleCards();
 
@@ -77,7 +77,7 @@ namespace WindowsFormsApp1
         }
 
         //選択されたカードの枚数だけ再配布するメソッド
-        public static List<string> ReDealCards(List<int> selected)
+        public List<string> ReDealCards(List<int> selected)
         {
             //逆順にソートする
             //(Listの後ろの要素から消さないと狂うため)
@@ -106,7 +106,7 @@ namespace WindowsFormsApp1
         }
 
         //役をジャッジするメソッド
-        public static string Judge()
+        public string Judge()
         {
             #region 詳細ルール
             //同じカードでも数字の高い方が基本的に強いカードです
@@ -246,7 +246,7 @@ namespace WindowsFormsApp1
         }
 
         //5枚すべてが同じマークかどうか判定するメソッド
-        private static (bool, string) JudgeSameMark()
+        public (bool, string) JudgeSameMark()
         {
             for (int i = 0; i < marks.Length; i++)
             {
@@ -272,7 +272,7 @@ namespace WindowsFormsApp1
         }
 
         //5枚の数字が全て連続しているか判定するメソッド
-        private static int JudgeContinueNumber()
+        public int JudgeContinueNumber()
         {
             //手札の数字だけを抜き出し、配列に入れる
             var temp = new List<int>();

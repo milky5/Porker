@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class Game
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -288,7 +288,7 @@
             this.pictureBox4.TabIndex = 40;
             this.pictureBox4.TabStop = false;
             // 
-            // Form1
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -316,8 +316,9 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox4);
-            this.Name = "Form1";
+            this.Name = "Game";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.cpuCard4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cpuCard3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cpuCard2)).EndInit();
