@@ -52,6 +52,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.endGameButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cpuCard4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cpuCard3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cpuCard2)).BeginInit();
@@ -83,16 +84,18 @@
             // 
             // cpuRankText
             // 
-            this.cpuRankText.Location = new System.Drawing.Point(627, 140);
+            this.cpuRankText.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.cpuRankText.Location = new System.Drawing.Point(560, 140);
             this.cpuRankText.Name = "cpuRankText";
-            this.cpuRankText.Size = new System.Drawing.Size(149, 19);
+            this.cpuRankText.Size = new System.Drawing.Size(219, 27);
             this.cpuRankText.TabIndex = 33;
             // 
             // playerRankText
             // 
-            this.playerRankText.Location = new System.Drawing.Point(627, 198);
+            this.playerRankText.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.playerRankText.Location = new System.Drawing.Point(560, 230);
             this.playerRankText.Name = "playerRankText";
-            this.playerRankText.Size = new System.Drawing.Size(149, 19);
+            this.playerRankText.Size = new System.Drawing.Size(219, 27);
             this.playerRankText.TabIndex = 34;
             // 
             // cpuCard4
@@ -230,14 +233,10 @@
             this.playerCard0.TabStop = false;
             this.playerCard0.Click += new System.EventHandler(this.playerCard0_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(625, 125);
+            this.label1.Location = new System.Drawing.Point(558, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 12);
             this.label1.TabIndex = 35;
@@ -246,7 +245,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(625, 183);
+            this.label2.Location = new System.Drawing.Point(558, 215);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 12);
             this.label2.TabIndex = 36;
@@ -288,12 +287,27 @@
             this.pictureBox4.TabIndex = 40;
             this.pictureBox4.TabStop = false;
             // 
+            // endGameButton
+            // 
+            this.endGameButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.endGameButton.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.endGameButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.endGameButton.Location = new System.Drawing.Point(602, 311);
+            this.endGameButton.Name = "endGameButton";
+            this.endGameButton.Size = new System.Drawing.Size(173, 53);
+            this.endGameButton.TabIndex = 41;
+            this.endGameButton.Text = "End This Game";
+            this.endGameButton.UseVisualStyleBackColor = false;
+            this.endGameButton.Visible = false;
+            this.endGameButton.Click += new System.EventHandler(this.newGameButton_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(788, 385);
+            this.Controls.Add(this.endGameButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.playerRankText);
@@ -365,6 +379,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button endGameButton;
     }
 }
 
