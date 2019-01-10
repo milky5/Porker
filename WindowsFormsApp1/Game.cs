@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         List<PictureBox> playerCards = new List<PictureBox>();
         List<int> playerSelected = new List<int>();
         Menu menu;
-        bool wantClose;
+        bool wantClose = false;
         GameMaster gm;
 
         //コンストラクタ
@@ -43,8 +43,6 @@ namespace WindowsFormsApp1
         //ゲームスタート時に呼び出されるメソッド
         private void StartGame()
         {
-            //×ボタンが押されたらゲームを終了する
-            wantClose = true;
 
             //List<PictureBox>にPictureBox(playerCard0～4)の要素を代入
             playerCards.Add(playerCard0);
@@ -125,8 +123,6 @@ namespace WindowsFormsApp1
         //交換ボタンが押されたときに呼び出されるメソッド
         private void exchangeButton_Click(object sender, EventArgs e)
         {
-            //フォームの×ボタンを押してもクローズしないでほしい
-            wantClose = false;
 
             for (int i = 0; i < playerCards.Count; i++)
             {
@@ -204,20 +200,27 @@ namespace WindowsFormsApp1
         }
 
         //直前までプレイしていたGameフォームを閉じたいときに呼ばれるメソッド
-        public void MyClose()
+        public void MyClose(bool wantClose)
         {
-            wantClose = true;
+            this.wantClose = wantClose;
             this.Close();
         }
 
         //フォームが閉じられる時に呼び出されるメソッド
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //クローズされそうになった時に、製作者的に閉じてほしくなかったら
-            if (e.CloseReason == CloseReason.UserClosing && !wantClose)
+            if (e.CloseReason == CloseReason.UserClosing && wantClose)
+            {
+                //クローズ
+                e.Cancel = false;
+            }
+            //プレイヤーがフォームを閉じようとしている
+            else if (e.CloseReason == CloseReason.UserClosing)
             {
                 //クローズをキャンセル
                 e.Cancel = true;
+                //アプリケーションを終了
+                Application.Exit();
             }
         }
 

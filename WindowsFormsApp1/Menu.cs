@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             if (endedGame != null)
             {
                 //そのフォームをクローズする
-                this.endedGame.MyClose();
+                this.endedGame.MyClose(true);
             }
             //新たにgameフォームのインスタンスを作成
             Game game = new Game(this);
